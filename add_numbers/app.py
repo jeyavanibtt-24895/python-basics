@@ -4,7 +4,9 @@ app = Flask(__name__)
 
 def add(a, b):
     return a + b
-
+@app.route("/")
+def home():
+    return "Welcome! My Python API is running."
 @app.route("/add")
 def add_numbers():
     a = float(request.args.get("a", 0))
